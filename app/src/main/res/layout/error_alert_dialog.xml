@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/dialog_close"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_close"
+        app:tint="@color/gray_text" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_animation_view"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animated_error" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_40ssp"
+            android:layout_marginEnd="@dimen/_40ssp"
+            android:text="Something Went wrong."
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/dialogErrorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_5ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:text="Your desire text"
+            android:textAlignment="center"
+            android:textColor="@color/gray_text"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/dialogDismiss_button"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_margin="20dp"
+            android:text="Try Again"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+</RelativeLayout>

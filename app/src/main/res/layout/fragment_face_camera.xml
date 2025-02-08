@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.kyc.FaceCameraFragment">
+
+    <LinearLayout
+        android:id="@+id/camera_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:orientation="vertical"
+        android:screenOrientation="portrait"
+        android:visibility="visible"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+
+            <LinearLayout
+                android:layout_width="@dimen/_60ssp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:translationZ="5dp"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:gravity="center_horizontal"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_20ssp"
+                    android:layout_height="@dimen/_20ssp"
+                    android:src="@drawable/ic_orientation"
+                    android:layout_marginBottom="@dimen/_20ssp"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20ssp"
+                    android:layout_height="@dimen/_20ssp"
+                    android:src="@drawable/ic_face_distance"
+                    android:layout_marginBottom="@dimen/_20ssp"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20ssp"
+                    android:layout_height="@dimen/_20ssp"
+                    android:src="@drawable/ic_group_photo"
+                    android:layout_marginBottom="@dimen/_20ssp"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/viewFinder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.mcash.client.presentation.ui.kyc.faceProcessors.GraphicOverlay
+                android:id="@+id/graphicOverlay_finder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/transparent_view_style" />
+
+
+                <ImageView
+                    android:id="@+id/close_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_back"
+                    app:tint="@android:color/white" />
+
+
+                <View
+                    android:id="@+id/camera_shutter"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/shutter_button_style"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground" />
+
+
+                <ImageView
+                    android:id="@+id/cameraFlashButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_flash_off"
+                    app:tint="@android:color/white" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <!-- Number of face detected  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8">
+
+
+                <TextView
+                    android:id="@+id/number_of_detected_faces_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:text="Number of Faces Detected:"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/number_of_detected_faces_check"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_check" />
+
+            </RelativeLayout>
+
+
+            <!-- Subject optimum distance from the camera  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8">
+
+
+                <TextView
+                    android:id="@+id/subject_distance_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:text="Distance from Camera:" />
+
+                <ImageView
+                    android:id="@+id/camera_distance_check"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_check"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+
+            <!-- Phone / Phone orientation  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8">
+
+
+                <TextView
+                    android:id="@+id/phone_orientation_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:text="Phone Orientation:" />
+
+
+                <ImageView
+                    android:id="@+id/screen_orientation_check"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_check"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+
+            <!-- Shutter button  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/shutter_button"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/mcash_orange"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/_10ssp"
+                            android:src="@drawable/ic_camera"
+                            app:tint="@color/white" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/face_camera_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/face_orientation_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/face_camera_message"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="25sp" />
+
+
+                <TextView
+                    android:id="@+id/area_ratio_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/face_orientation_text"
+                    android:layout_centerHorizontal="true"
+                    android:text="Area ratio"
+                    android:textSize="25sp"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/capture_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Capture image"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="10">
+
+
+        <ImageView
+            android:id="@+id/face_photo_preview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_save_photo"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_corner_background"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_delete_photo"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_corner_background"
+                android:text="Retry"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

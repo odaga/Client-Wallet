@@ -1,0 +1,10 @@
+<resources>
+    <attr name="bgColor" format="color" />
+    <attr name="bgIconColor" format="color" />
+    <attr name="foregroundIconColor" format="color" />
+    <attr name="iconRippleColor" format="color" />
+    <attr name="actionRippleColor" format="color" />
+    <attr name="bgSearchColor" format="color" />
+    <attr name="appRippleColor" format="color" />
+    <attr name="toolbarColor" format="color" />
+</resources>

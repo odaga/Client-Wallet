@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/on_boarding_nav_graph"
+    app:startDestination="@id/clientFormGroupFragment">
+
+    <fragment
+        android:id="@+id/clientFormGroupFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.ClientFormGroupFragment"
+        android:label="fragment_client_form_group"
+        tools:layout="@layout/fragment_client_form_group" >
+        <action
+            android:id="@+id/action_clientFormGroupFragment_to_clientBioFragment"
+            app:destination="@id/clientBioFragment" />
+        <action
+            android:id="@+id/action_clientFormGroupFragment_to_kycFormGroupFragment"
+            app:destination="@id/kycFormGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clientBioFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.ClientBioFragment"
+        android:label="fragment_client_bio"
+        tools:layout="@layout/fragment_client_bio" >
+        <action
+            android:id="@+id/action_clientBioFragment_to_idScanFragment2"
+            app:destination="@id/idScanFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/idScanFragment2"
+        android:name="com.mcash.client.presentation.ui.kyc.IdScanFragment"
+        android:label="fragment_id_scan"
+        tools:layout="@layout/fragment_id_scan" >
+        <action
+            android:id="@+id/action_idScanFragment2_to_clientBioFragment"
+            app:destination="@id/clientBioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kycFormGroupFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.KycFormGroupFragment"
+        android:label="fragment_kyc_form_group"
+        tools:layout="@layout/fragment_kyc_form_group" >
+        <action
+            android:id="@+id/action_kycFormGroupFragment_to_clientBioFragment"
+            app:destination="@id/clientBioFragment" />
+        <action
+            android:id="@+id/action_kycFormGroupFragment_to_kycNextOfKinFragment"
+            app:destination="@id/kycNextOfKinFragment" />
+        <action
+            android:id="@+id/action_kycFormGroupFragment_to_kycContactDetailsFragment"
+            app:destination="@id/kycContactDetailsFragment" />
+        <action
+            android:id="@+id/action_kycFormGroupFragment_to_faceCameraFragment"
+            app:destination="@id/faceCameraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kycNextOfKinFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.KycNextOfKinFragment"
+        android:label="fragment_kyc_next_of_kin"
+        tools:layout="@layout/fragment_kyc_next_of_kin" />
+    <fragment
+        android:id="@+id/kycContactDetailsFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.KycContactDetailsFragment"
+        android:label="fragment_kyc_contact_details"
+        tools:layout="@layout/fragment_kyc_contact_details" />
+    <fragment
+        android:id="@+id/faceCameraFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.FaceCameraFragment"
+        android:label="fragment_face_camera"
+        tools:layout="@layout/fragment_face_camera" />
+</navigation>

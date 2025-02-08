@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.kyc.ClientFormGroupFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/get_started_view"
+        android:layout_alignParentTop="true"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:src="@drawable/register_bg"
+            android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20ssp"
+                    android:layout_marginBottom="@dimen/_20ssp"
+                    android:text="Manage Your\n Finances\nSimply"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_30ssp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/get_started_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_20ssp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_get_started"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:text="Get started"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_20ssp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:text="Already have an account?" />
+
+            <TextView
+                android:id="@+id/sign_in_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:textColor="@color/mcash_orange" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

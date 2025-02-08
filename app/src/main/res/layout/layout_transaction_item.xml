@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_4"
+    android:layout_marginBottom="@dimen/spacing_4"
+    app:cardCornerRadius="@dimen/spacing_8"
+    app:cardElevation="@dimen/spacing_0"
+    app:contentPadding="@dimen/spacing_0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_14">
+
+        <FrameLayout
+            android:id="@+id/flStatus"
+            android:layout_width="@dimen/spacing_40"
+            android:layout_height="@dimen/spacing_40"
+            android:background="@drawable/orange_overlay_circular_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/civStatusIcon"
+                android:layout_width="@dimen/spacing_16"
+                android:layout_height="@dimen/spacing_16"
+                android:layout_gravity="center"
+                android:tint="?colorSecondary"
+                app:srcCompat="@drawable/ic_check"
+                app:tint="?colorSecondary" />
+        </FrameLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toStartOf="@id/mtvAmount"
+            app:layout_constraintStart_toEndOf="@id/flStatus"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Mtn Airtime" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_4"
+            android:background="@drawable/et_border_item_bg"
+            android:paddingTop="@dimen/spacing_4"
+            android:paddingBottom="@dimen/spacing_4"
+            android:textColor="?colorPrimary"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="Processed" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/font_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="2021-01-01" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_14"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="UGX 10,000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

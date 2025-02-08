@@ -1,0 +1,200 @@
+<resources>
+    <string name="app_name">mcash</string>
+    <string name="who_to_follow">Who to follow</string>
+    <string name="trending_meals">Trending Meals</string>
+    <string name="trends_for_you">Trends for you</string>
+    <string name="trending_events">Trending Events</string>
+    <string name="see_more">See more</string>
+    <string name="follow">Follow</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="pin">PIN</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="verify">Verify</string>
+    <string name="validation_error">Validation error</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="available_balance">Available balance</string>
+    <string name="transfer">Transfer</string>
+    <string name="topup">Topup</string>
+    <string name="deposit">Deposit money to customer mcash wallet</string>
+    <string name="mcash">MCash account number</string>
+    <string name="depositor_name">Depositor\'s Name</string>
+    <string name="cent_verify">Verify Account</string>
+    <string name="cent_deposit">Make Deposit</string>
+    <string name="depositor_phone">Depositor\'s Phone Number</string>
+    <string name="validate">Verify Number</string>
+    <string name="history">History</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="payments">Payments</string>
+    <string name="transfer_options">Transfer options</string>
+    <string name="bank">Bank</string>
+    <string name="mcash_wallet">Mcash wallet</string>
+    <string name="mobile_money">Mobile Money</string>
+    <string name="amount">Amount</string>
+    <string name="ugx">UGX</string>
+    <string name="money_holder">-- -- --</string>
+    <string name="are_you_sure_you_want_to_exit">Are you sure you want to exit Mcash App</string>
+    <string name="yes">Yes</string>
+    <string name="no">no</string>
+    <string name="save_as_favorite">Save as favorite</string>
+    <string name="loading">Loading…</string>
+    <string name="promos_info"><![CDATA[Promos & Info]]></string>
+    <string name="contact_permission_rationale">Need contacts read permission for fetching and displaying contacts</string>
+    <string name="location_permission_rationale">Location permission are required to use location services</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="title_activity_beneficiary">BeneficiaryActivity</string>
+    <string name="search_beneficiary">Search favorite</string>
+    <string name="no_data_found">No data found</string>
+    <string name="add_new_beneficiary">Add new favorite</string>
+    <string name="name">Name</string>
+    <string name="warning">Warning</string>
+    <string name="favorites">Favorites</string>
+    <string name="amunt_required">Amount required</string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+    <string name="phone_number_required">Phone number required</string>
+    <string name="phone_number_too_long">Phone number too long</string>
+    <string name="only_airtel_mtn_numbers">Only MTN and Airtel numbers allowed</string>
+    <string name="only_mtn_numbers">Only MTN numbers allowed</string>
+    <string name="your_contacts">Your contacts</string>
+    <string name="mobile_money_number">Mobile money number</string>
+    <string name="transfer_money_to_a_mobile_money_account">Transfer money to a mobile money account</string>
+    <string name="top_up_cash_to_your_wallet_from_mobile_money">Top up cash to your wallet from mobile money</string>
+    <string name="transfer_money_to_a_bank">Transfer money to the bank account</string>
+    <string name="send">Send</string>
+    <string name="done">Done</string>
+    <string name="select_bank">Select bank</string>
+    <string name="transfer_type">Transfer Type</string>
+    <string name="enter_the_code_that_was_sent_to_your_phone_number">Please enter the 4-digit code that was sent to your phone number %1$s</string>
+    <string name="we_will_send_you_a_one_time_password_on_this_phone_number">We will send you a One Time Password on this phone number</string>
+    <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
+    <string name="sms_permission_rationale">Allow this persmission to allow reading the OTP messages</string>
+    <string name="resend">Resend OTP</string>
+    <string name="amount_required">Amount required</string>
+    <string name="insufficient_balance">You have insufficient balance</string>
+    <string name="retry">Retry</string>
+    <string name="awaiting_confirmation">Awaiting confirmation</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_mcash_pin">Enter Mcash PIN</string>
+    <string name="incorrect_pin">Incorrect Pin</string>
+    <string name="confirm_pin">Confirm PIN</string>
+    <string name="old_pin">OLD PIN</string>
+    <string name="old_pin_label">Enter Old PIN</string>
+    <string name="new_pin">NEW PIN</string>
+    <string name="new_pin_label">Enter New PIN</string>
+    <string name="confirm_new_pin">CONFIRM NEW PIN</string>
+    <string name="confirm_new_pin_label">Confirm New PIN</string>
+    <string name="transfer_money_to_mcash_wallet">Transfer money to Mcash Wallet</string>
+    <string name="select_area">Select Area</string>
+    <string name="enter_meter_number">Enter meter number</string>
+    <string name="e_g_1234567">e.g 1234567</string>
+    <string name="continue_text">Continue</string>
+    <string name="nwsc">NWSC</string>
+    <string name="nwsc_summary">NWSC Summary</string>
+    <string name="airtime">Buy Airtime</string>
+    <string name="client_airtime">Buy Airtime for customer</string>
+    <string name="internet">Buy Data bundles</string>
+    <string name="pay_tv">Pay TV</string>
+    <string name="pay">Pay</string>
+    <string name="customer_reference">Customer Reference</string>
+    <string name="enter_amount_to_pay">Enter amount to pay</string>
+    <string name="enter_amount_to_request">Enter amount to request</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="umeme">UMEME</string>
+    <string name="buy_umeme">Pay Umeme Bills</string>
+    <string name="umeme_reason">Customer Type</string>
+    <string name="select_reason">Select</string>
+    <string name="umeme_number">Umeme Account Number</string>
+    <string name="enter_customer_phone">Enter Phone Number</string>
+    <string name="validate_umeme">Validate Customer</string>
+    <string name="confirm_umeme">Confirm Payment</string>
+
+    <string name="account_name">Account Name</string>
+    <string name="account_number">Account Number</string>
+    <string name="charges">Charges</string>
+    <string name="total_amount">Total Amount</string>
+
+    <string name="narration">Narration</string>
+    <string name="failure">Failure</string>
+
+    <string name="tv">Pay TV</string>
+    <string name="client_tv">Pay TV for customer</string>
+    <string name="select_tv">Select TV</string>
+    <string name="select_package">Select Package</string>
+    <string name="decoder_no">Decoder Number</string>
+    <string name="enter_decoder_no">Enter Valid Decoder Number</string>
+
+    <string name="buy_voice">Buy Voice Bundles</string>
+    <string name="select_network">Select Network</string>
+    <string name="voice">Buy Voice Bundle</string>
+
+    <string name="buy_data">Buy Data Bundles</string>
+    <string name="data">Buy Data Bundle</string>
+    <string name="utility_package">Package</string>
+
+    <string name="ura">Pay URA</string>
+    <string name="enter_prn">Enter PRN</string>
+    <string name="prn">PRN</string>
+
+    <string name="merchant">Pay Merchant</string>
+    <string name="enter_m_code">Enter Merchant Code</string>
+    <string name="merchant_name">Merchant</string>
+
+    <string name="validate_account">Validate Account</string>
+    <string name="property_ref">Property Reference</string>
+    <string name="outstanding">Outstanding Balance</string>
+    <string name="area">Area</string>
+    <string name="pay_nwsc">Pay NWSC</string>
+
+    <string name="change">Update Your PIN</string>
+    <string name="help">Get Support</string>
+    <string name="notify">Manage Notifications</string>
+    <string name="faq">Frequently Asked Questions</string>
+    <string name="about">About This App</string>
+    <string name="logout">Sign Out</string>
+    <string name="my_account">My Account</string>
+    <string name="no_trans">No transactions found</string>
+
+    <string name="loan_request">Request for Loan</string>
+    <string name="make_loan_request">Make Loan Request</string>
+    <string name="loan_provider">Loan Provider</string>
+    <string name="bright_bridge">Bright Bridge</string>
+
+
+    <string name="update">Update App</string>
+    <string name="version">The version of the app You are using is outdated. Please update Your App for a better experience</string>
+    <string name="skip">Skip</string>
+
+    <string name="digia_save">Save money to respective Sacco</string>
+    <string name="saver_id">Enter Saver ID</string>
+    <string name="enter_amount_to_save">Enter amount to save</string>
+    <string name="saving_group">Savings Group</string>
+    <string name="s_money">Save Money</string>
+    <string name="digia">SACCO</string>
+    <string name="validate_customer">Validate Transaction</string>
+    <string name="question">Question Number Here?</string>
+    <string name="verify_identity">Verify Identity</string>
+    <string name="terms_conditions_amp_privacy_policies"><u>Terms, Conditions and Privacy Policies</u></string>
+
+</resources>

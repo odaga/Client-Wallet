@@ -1,0 +1,130 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/spacing_50"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.mcash.presentation.ui.transfer.McashWithdrawFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flClose"
+                android:layout_width="@dimen/spacing_50"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="@dimen/spacing_4"
+                app:contentPadding="@dimen/spacing_5"
+                app:cardElevation="@dimen/spacing_0"
+                app:cardCornerRadius="@dimen/spacing_25">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/civClose"
+                    android:layout_width="@dimen/spacing_20"
+                    android:layout_height="@dimen/spacing_20"
+                    app:srcCompat="@drawable/ic_close"
+                    android:tint="?colorSecondary"
+                    app:tint="?colorSecondary"
+                    android:layout_gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="@dimen/spacing_20"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Transfer"
+                android:textSize="@dimen/spacing_20"
+                android:textStyle="bold"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_color"
+            app:layout_constraintTop_toBottomOf="@id/clTopBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <FrameLayout
+            android:layout_width="@dimen/spacing_100"
+            android:layout_height="@dimen/spacing_100"
+            android:background="@drawable/failure_overlay_circular_bg"
+            android:id="@+id/flCheck"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/spacing_30">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_60"
+                android:layout_height="@dimen/spacing_60"
+                app:srcCompat="@drawable/ic_close"
+                android:tint="@color/danger"
+                app:tint="@color/danger"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvSuccessLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/spacing_20"
+            app:layout_constraintTop_toBottomOf="@id/flCheck"
+            android:text="@string/failure"
+            android:textSize="@dimen/font_25"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvSuccesMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/spacing_16"
+            app:layout_constraintTop_toBottomOf="@id/mtvSuccessLabel"
+            tools:text="Money successfully transfered to Denis Oluka"
+            android:textSize="@dimen/font_18" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDone"
+            android:layout_width="0dp"
+            style="@style/PrimaryBtnStyle"
+            android:text="@string/done"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:layout_marginBottom="@dimen/spacing_30"
+            app:layout_constraintTop_toBottomOf="@+id/mtvSuccesMessage"
+            app:layout_constraintStart_toStartOf="@+id/mtvSuccesMessage"
+            app:layout_constraintEnd_toEndOf="@+id/mtvSuccesMessage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?bgColor"
+    tools:context=".presentation.ui.fuelSave.FuelSaveFragment">
+
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_main_toolbar" />
+
+
+    <LinearLayout
+        android:id="@+id/input_options_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutToolbar"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:background="@drawable/icon_ripple_bg"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="@dimen/cardview_default_elevation">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10ssp">
+
+                <ImageView
+                    android:id="@+id/refresh_loyalty_points"
+                    android:layout_width="@dimen/_25ssp"
+                    android:layout_height="@dimen/_25ssp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:src="@drawable/ic_refresh"
+                    app:tint="@color/mcash_orange" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/points_shimmer_loader"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/loyalty_points_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_25ssp"
+                        android:textStyle="bold" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/points_shimmer_loader"
+
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:text="Fuel Plus Points"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/default_size" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/scan_station_code_card"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="10"
+                android:background="@drawable/icon_ripple_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="@dimen/_1ssp"
+                android:layout_marginEnd="@dimen/_1ssp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="@dimen/cardview_default_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_qr_code" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:text="Scan Station Code"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/default_size" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/_5ssp"
+                android:layout_weight="4"
+                android:background="@color/gray_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="OR"
+                android:textAlignment="center" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/_5ssp"
+                android:layout_weight="4"
+                android:background="@color/gray_text" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_border_item_bg">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/fuel_station_code_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Station Code"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_size"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_get_Station_details"
+                style="@style/PrimaryBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:layout_marginBottom="@dimen/spacing_30"
+                android:text="Make Fuel Purchase" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/driver_onboarding_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutToolbar"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:id="@+id/driver_not_found_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="@dimen/spacing_80"
+                android:layout_height="@dimen/spacing_80"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/orange_overlay_circular_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/spacing_50"
+                    android:layout_height="@dimen/spacing_50"
+                    android:layout_gravity="center"
+                    android:tint="?attr/colorSecondary"
+                    app:srcCompat="@drawable/ic_add_user"
+                    app:tint="?attr/colorSecondary" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30ssp"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_30ssp"
+                android:text="You're missing out on Fuel Plus. \n Enroll in Fuel Plus now and enjoy subsidized fuel prices!"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_to_driver_onboarding"
+                style="@style/PrimaryBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40ssp"
+                android:layout_marginTop="@dimen/spacing_16"
+                android:layout_marginEnd="@dimen/_40ssp"
+                android:layout_marginBottom="@dimen/_30ssp"
+                android:text="Enroll now to start saving !"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/driver_lookup_error_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_animation_view"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/animated_error" />
+
+            <TextView
+                android:id="@+id/driver_lookup_error_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30ssp"
+                android:layout_marginEnd="@dimen/_30ssp"
+                android:textAlignment="center"
+                android:textSize="@dimen/_15ssp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_find_driver"
+                style="@style/PrimaryBtnStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30ssp"
+                android:layout_marginTop="@dimen/spacing_16"
+                android:layout_marginEnd="@dimen/_30ssp"
+                android:layout_marginBottom="@dimen/_30ssp"
+                android:text="Try again "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pay_tv_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?bgColor"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.utilities.tv.SelectTVFragment">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_main_toolbar" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_animation_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animated_progress" />
+
+    <!--    error layout  shown when loading tv packages-->
+    <RelativeLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/error_icon"
+            android:layout_width="@dimen/spacing_100"
+            android:layout_height="@dimen/spacing_100"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/orange_overlay_circular_bg">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_40"
+                android:layout_height="@dimen/spacing_40"
+                android:layout_gravity="center"
+                android:tint="?attr/colorSecondary"
+                app:srcCompat="@drawable/ic_tv"
+                app:tint="?attr/colorSecondary" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/error_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textAlignment="center"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/_14ssp" />
+    </RelativeLayout>
+
+
+    <!--   TV providers list   -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tv_provider_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutToolbar"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/select_package_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutToolbar"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="10">
+
+        <!-- Decoder number input field view -->
+        <LinearLayout
+            android:id="@+id/decoder_number_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_5ssp"
+            android:visibility="visible">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvDecLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_20"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Enter Your Decoder Number"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/decoder_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_20"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginEnd="@dimen/spacing_20"
+                android:background="@drawable/et_border_item_bg"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/decoder_number_field"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/decoder_no"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/package_details_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!--  Tv package list view  -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tv_packages_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginStart="@dimen/_20ssp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_20ssp"
+                    android:layout_marginBottom="@dimen/_5ssp"
+                    android:visibility="visible" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/btn_validate"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/_20ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:layout_marginEnd="@dimen/_20ssp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_10ssp"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/selected_package_price_label"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+
+                                android:text="Amount:"
+                                android:textColor="@color/gray_text"
+                                android:textSize="@dimen/_15ssp" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/selected_package_price"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="7.5"
+                                android:text="UGX.0"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/gray_text"
+                                android:textSize="@dimen/_14ssp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10ssp"
+                            android:weightSum="10">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/selected_package_field_label"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_weight="2.5"
+                                android:text="Package:"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/gray_text"
+                                android:textSize="@dimen/_15ssp" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/selected_package_field"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="7.5"
+                                android:text="Selected Package"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/gray_text"
+                                android:textSize="@dimen/_14ssp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_validate"
+                        style="@style/PrimaryBtnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/_20ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:text="Validate"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

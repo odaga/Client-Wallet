@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/spacing_20"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.mcash.client.presentation.ui.transfer.McashWalletFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_70"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/spacing_60"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:rippleColor="?appRippleColor"
+                android:layout_margin="@dimen/spacing_4"
+                app:contentPadding="@dimen/spacing_5"
+                app:cardElevation="@dimen/spacing_0"
+                app:cardCornerRadius="@dimen/spacing_25">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/civClose"
+                    android:layout_width="@dimen/spacing_20"
+                    android:layout_height="@dimen/spacing_20"
+                    app:srcCompat="@drawable/ic_close"
+                    android:tint="?colorSecondary"
+                    app:tint="?colorSecondary"
+                    android:layout_gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/confirm_pin"
+                android:textSize="@dimen/spacing_20"
+                android:textStyle="bold"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_color"
+            app:layout_constraintTop_toBottomOf="@id/clTopBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="@dimen/spacing_16"
+           app:layout_constraintTop_toBottomOf="@+id/divider"
+           app:layout_constraintStart_toStartOf="parent">
+
+           <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/mtvPinLabel"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_marginTop="@dimen/spacing_16"
+               android:visibility="visible"
+               android:text="@string/enter_mcash_pin"
+               android:textSize="@dimen/font_18"/>
+
+           <com.chaos.view.PinView
+               android:id="@+id/pvPin"
+               style="@style/customPinViewStyle"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:inputType="numberPassword"
+               android:padding="@dimen/spacing_8"
+               android:textColor="@color/gray_text"
+               android:gravity="center"
+               android:singleLine="true"
+               android:imeOptions="actionDone"
+               android:maxLines="1"
+               android:layout_marginTop="@dimen/spacing_18"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/mtvPinLabel"/>
+
+           <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/mtvWrongPin"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/pvPin"
+               android:textColor="@color/danger"
+               android:layout_marginTop="@dimen/spacing_8"
+               android:visibility="gone"
+               android:text="@string/incorrect_pin" />
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/btnConfirm"
+               android:layout_width="0dp"
+               style="@style/PrimaryBtnStyle"
+               android:text="@string/confirm"
+               android:visibility="visible"
+               android:textSize="@dimen/font_20"
+               android:layout_marginTop="@dimen/spacing_20"
+               android:layout_marginBottom="@dimen/spacing_30"
+               app:layout_constraintTop_toBottomOf="@+id/mtvWrongPin"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

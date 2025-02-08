@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_item"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginStart="@dimen/_10ssp"
+    android:layout_marginTop="@dimen/_5ssp"
+    android:layout_marginEnd="@dimen/_10ssp"
+    android:clickable="true"
+    android:elevation="@dimen/cardview_default_elevation"
+    android:focusable="true"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_20ssp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/provider_logo"
+            android:layout_width="@dimen/_50ssp"
+            android:layout_height="@dimen/_40ssp"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_10ssp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_tv" />
+
+        <TextView
+            android:id="@+id/tv_provider_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_toRightOf="@+id/provider_logo"
+            android:layout_centerVertical="true"
+            android:text="ProviderName"
+            android:textColor="@color/mcash_grey"
+            android:textSize="@dimen/_14ssp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

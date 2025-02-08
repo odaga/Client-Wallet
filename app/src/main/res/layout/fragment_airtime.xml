@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".client.presentation.ui.utilities.airtime.AirtimeFragment">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_main_toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/airtimeEntry"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/layoutToolbar">
+
+        <FrameLayout
+            android:id="@+id/flWalletPic"
+            android:layout_width="@dimen/spacing_100"
+            android:layout_height="@dimen/spacing_100"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/orange_overlay_circular_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_50"
+                android:layout_height="@dimen/spacing_50"
+                android:layout_gravity="center"
+                android:tint="?attr/colorSecondary"
+                app:srcCompat="@drawable/ic_phone"
+                app:tint="?attr/colorSecondary" />
+        </FrameLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvTLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_30"
+            android:layout_marginTop="@dimen/font_18"
+            android:layout_marginEnd="@dimen/spacing_30"
+            android:gravity="center"
+            android:text="@string/client_airtime"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flWalletPic"
+            app:layout_goneMarginTop="@dimen/spacing_8" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvPhoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="@string/phone_number"
+            android:textColor="@color/gray_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mtvTLabel" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20"
+            android:layout_marginEnd="@dimen/spacing_20"
+            android:background="@drawable/et_border_item_bg"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mtvPhoneLabel">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_clickable="false"
+                app:ccp_customMasterCountries="UG"
+                app:ccp_defaultLanguage="ENGLISH"
+                app:ccp_defaultNameCode="UG"
+                app:ccp_showArrow="false"
+                app:ccp_showFlag="false"
+                app:ccp_showFullName="false"
+                app:ccp_showNameCode="false"
+                app:ccp_showPhoneCode="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_size"
+                app:layout_constraintBottom_toBottomOf="@id/ccp"
+                app:layout_constraintEnd_toStartOf="@+id/llIspLogo"
+                app:layout_constraintStart_toEndOf="@id/ccp"
+                app:layout_constraintTop_toTopOf="@id/ccp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <LinearLayout
+                android:id="@+id/llIspLogo"
+                android:layout_width="@dimen/spacing_40"
+                android:layout_height="@dimen/spacing_40"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/civIspLogo"
+                    android:layout_width="@dimen/spacing_25"
+                    android:layout_height="@dimen/spacing_25"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/airtel_logo" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/spacing_20"
+            android:text="@string/enter_amount_to_pay"
+            android:textColor="@color/gray_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clPhone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_20"
+            android:layout_marginEnd="@dimen/spacing_20"
+            android:background="@drawable/et_border_item_bg"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/clPhone"
+            app:layout_constraintStart_toStartOf="@+id/clPhone"
+            app:layout_constraintTop_toBottomOf="@+id/mtvAmountLabel">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvCurrencyCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_5"
+                android:padding="@dimen/spacing_8"
+                android:text="@string/ugx"
+                android:textSize="@dimen/default_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etAmount"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/amount"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_size"
+                app:layout_constraintBottom_toBottomOf="@id/mtvCurrencyCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mtvCurrencyCode"
+                app:layout_constraintTop_toTopOf="@id/mtvCurrencyCode"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnValidateAirtime"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginBottom="@dimen/spacing_30"
+            android:text="@string/airtime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/clPhone"
+            app:layout_constraintStart_toStartOf="@+id/clPhone"
+            app:layout_constraintTop_toBottomOf="@+id/clAmount" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/airtimeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layoutToolbar">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/flWaterPic"
+                    android:layout_width="@dimen/spacing_80"
+                    android:layout_height="@dimen/spacing_80"
+                    android:background="@drawable/white_circular_bg"
+                    android:elevation="@dimen/spacing_40"
+                    app:layout_constraintBottom_toTopOf="@id/cardInfo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cardInfo">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/spacing_80"
+                        android:layout_height="@dimen/spacing_80"
+                        android:background="@drawable/orange_overlay_circular_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/spacing_40"
+                            android:layout_height="@dimen/spacing_40"
+                            android:layout_gravity="center"
+                            android:tint="?attr/colorSecondary"
+                            app:srcCompat="@drawable/ic_phone"
+                            app:tint="?attr/colorSecondary" />
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_35sdp"
+                    app:cardCornerRadius="@dimen/spacing_8"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_20"
+                        android:padding="@dimen/spacing_16">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvAccountNameLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:text="@string/account_name"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvAccountNameValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:textColor="@color/mcash_grey"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mtvAccountNameLabel"
+                            tools:text="Denis Oluka" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvAccountLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_16"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:text="@string/account_number"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mtvAccountNameLabel" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvAccountValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:textColor="@color/mcash_grey"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mtvAccountLabel"
+                            tools:text="342352" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvPackageLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_16"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:text="@string/utility_package"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mtvAccountValue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvPackageValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:textColor="@color/mcash_grey"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mtvPackageLabel"
+                            tools:text="342352" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtAmountLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_16"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:text="@string/amount"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mtvPackageLabel" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvAmountValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:textColor="@color/mcash_grey"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mtAmountLabel"
+                            tools:text="UGX 160,000" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvChargeLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_16"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:text="@string/charges"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mtAmountLabel" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvChargeValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:textColor="@color/mcash_grey"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mtvChargeLabel"
+                            tools:text="UGX 160,000" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvTotalLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_16"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:text="@string/total_amount"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mtvChargeLabel" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mtvTotalValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_5"
+                            android:textColor="@color/mcash_grey"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mtvTotalLabel"
+                            tools:text="UGX 160,000" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mtvMoneyError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/danger"
+                    android:textSize="@dimen/font_12"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardInfo"
+                    tools:text="@string/amount_required" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAirtime"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/spacing_20"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/spacing_20"
+            android:layout_marginBottom="@dimen/spacing_30"
+            android:text="@string/airtime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

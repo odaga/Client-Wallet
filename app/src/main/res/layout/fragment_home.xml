@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?bgColor">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:translationZ="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_bg_mask"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+           android:background="@color/mcash_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <!--  App Header -->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationZ="10dp"
+            android:layout_alignParentTop="true">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="25dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                tools:text="User" />
+
+
+            <ImageView
+                android:id="@+id/llSettings"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:contentDescription="settings"
+                android:focusable="true"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+
+        <!-- Balance Dashboard Balance Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/balance_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="35dp"
+            android:background="@color/gray_light_bg"
+            android:elevation="20dp"
+            android:padding="20dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:text="@string/available_balance"
+                        android:textAlignment="center"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/show_balance"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/eye"
+                        app:tint="@color/mcash_orange" />
+
+                    <ImageView
+                        android:id="@+id/hide_balance"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/close_eye"
+                        android:visibility="gone"
+                        app:tint="@color/mcash_orange" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UGX "
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/mtvWalletBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--- ---"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:weightSum="100">
+
+                    <RelativeLayout
+                        android:id="@+id/cardTopup"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:background="@drawable/icon_ripple_bg"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/topup_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/wallet_top_up"
+                            app:tint="@color/mcash_orange" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/topup_icon"
+                            android:text="Deposit"
+                            android:textAlignment="center"
+                            android:textSize="11sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/cardTransfer"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="35"
+                        android:background="@drawable/icon_ripple_bg"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/gray_light_bg" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/gray_light_bg" />
+
+                        <ImageView
+                            android:id="@+id/transfer_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_send"
+                            app:tint="@color/mcash_orange" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/transfer_icon"
+                            android:text="Transfer Funds"
+                            android:textAlignment="center"
+                            android:textSize="11sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cardHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:background="@drawable/icon_ripple_bg"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/withdraw_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/history"
+                            app:tint="@color/mcash_orange" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/withdraw_icon"
+                            android:text="@string/history"
+                            android:textAlignment="center"
+                            android:textSize="11sp" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvllll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/balance_card"
+            android:layout_marginStart="@dimen/spacing_8"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_10ssp"
+            android:text="@string/payments"
+            android:textAlignment="center"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold" />
+
+        <!-- Services -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/iconsRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mtvllll"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_20ssp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fuel_save_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_below="@+id/iconsRecyclerview"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:background="@drawable/icon_ripple_bg"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="@dimen/cardview_default_elevation">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_30ssp"
+                    android:layout_height="@dimen/_30ssp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="-5dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_15ssp"
+                    android:src="@drawable/ic_new_ribbon" />
+
+                <ImageView
+                    android:id="@+id/civIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/ic_station"
+                    app:tint="@color/mcash_orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/civIcon"
+                    android:text="Fuel Plus"
+                    android:layout_marginStart="@dimen/_30ssp"
+                    android:textSize="@dimen/_11ssp"/>
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Promo section  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fuel_save_card_view"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvPromoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:layout_marginTop="@dimen/spacing_20"
+                android:text="Offers  &amp; Promos"
+                android:textSize="@dimen/font_14"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@id/iconsRecyclerview"
+                app:layout_constraintTop_toBottomOf="@id/iconsRecyclerview" />
+
+            <!--        <androidx.recyclerview.widget.RecyclerView-->
+            <!--            android:id="@+id/promotionRecycler"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_margin="@dimen/_20sdp"-->
+            <!--            android:orientation="vertical"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/iconsRecyclerview"-->
+            <!--            tools:layout_editor_absoluteX="16dp"-->
+            <!--            tools:listitem="@layout/layout_promo_banner_item" />-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/cardview_default_elevation"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/promo_banner" />
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

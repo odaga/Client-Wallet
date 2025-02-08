@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.mcash.client.presentation.ui.transfer.McashWalletFragment">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_main_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/spacing_20"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/layoutToolbar"
+            app:layout_constraintBottom_toTopOf="@id/btnBankTransfer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <FrameLayout
+                android:layout_width="@dimen/spacing_100"
+                android:layout_height="@dimen/spacing_100"
+                android:background="@drawable/orange_overlay_circular_bg"
+                android:id="@+id/flWalletPic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/spacing_50"
+                    android:layout_height="@dimen/spacing_50"
+                    app:srcCompat="@drawable/ic_bank"
+                    android:tint="?attr/colorSecondary"
+                    app:tint="?attr/colorSecondary"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvTLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/transfer_money_to_a_bank"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="@dimen/font_18"
+                app:layout_goneMarginTop="@dimen/spacing_8"
+                app:layout_constraintTop_toBottomOf="@id/flWalletPic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/spacing_30"
+                android:layout_marginStart="@dimen/spacing_30"
+                android:layout_marginTop="@dimen/font_18"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ilBanks"
+                style="@style/CustomTextInputDropdownLayout"
+                android:layout_marginStart="@dimen/spacing_20"
+                android:layout_marginEnd="@dimen/spacing_20"
+                android:layout_marginTop="@dimen/spacing_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/mtvTLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/atBanks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:hint="@string/select_bank"
+                    android:textSize="@dimen/default_size" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ilTransferType"
+                style="@style/CustomTextInputDropdownLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_spacing"
+                app:layout_constraintTop_toBottomOf="@id/ilBanks"
+                app:layout_constraintStart_toStartOf="@id/ilBanks"
+                app:layout_constraintEnd_toEndOf="@id/ilBanks">
+
+                <AutoCompleteTextView
+                    android:id="@+id/atTransferType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:hint="@string/transfer_type"
+                    android:textSize="@dimen/default_size" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ilAccountName"
+                style="@style/McashTextInputStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_spacing"
+                app:layout_constraintTop_toBottomOf="@+id/ilTransferType"
+                app:layout_constraintStart_toStartOf="@+id/ilTransferType"
+                app:layout_constraintEnd_toEndOf="@+id/ilTransferType">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAccountName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Account name"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberPassword"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    style="@style/DefaultEditTextStyle" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ilAccountNumber"
+                style="@style/McashTextInputStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_spacing"
+                app:layout_constraintTop_toBottomOf="@+id/ilAccountName"
+                app:layout_constraintStart_toStartOf="@+id/ilAccountName"
+                app:layout_constraintEnd_toEndOf="@+id/ilAccountName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAccountNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Account number"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberPassword"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    style="@style/DefaultEditTextStyle" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="@dimen/default_spacing"
+                android:background="@drawable/et_border_item_bg"
+                app:layout_constraintTop_toBottomOf="@id/ilAccountNumber"
+                app:layout_constraintStart_toStartOf="@+id/ilAccountNumber"
+                app:layout_constraintEnd_toEndOf="@+id/ilAccountNumber">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ugx"
+                    android:padding="@dimen/spacing_8"
+                    android:layout_marginStart="@dimen/spacing_5"
+                    android:textSize="@dimen/default_size"
+                    android:id="@+id/mtvCurrencyCode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:hint="@string/amount"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/mtvCurrencyCode"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/mtvCurrencyCode"
+                    app:layout_constraintTop_toTopOf="@id/mtvCurrencyCode" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBankTransfer"
+        android:layout_width="0dp"
+        style="@style/PrimaryBtnStyle"
+        android:layout_marginEnd="@dimen/spacing_20"
+        android:layout_marginStart="@dimen/spacing_20"
+        android:text="@string/transfer"
+        android:layout_marginBottom="@dimen/spacing_30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

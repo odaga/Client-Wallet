@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mcash_grey">#3d505a</color>
+    <color name="mcash_orange">#f7941e</color>
+
+    <color name="black">#FF333333</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_light_bg">#cccdcf</color>
+    <color name="gray_text">#777</color>
+    <color name="light_bg">#efefef</color>
+    
+    <color name="divider_color">#66777777</color>
+
+    <color name="success">#05cc46</color>
+    <color name="danger">#f54025</color>
+
+    <color name="success_80">#1505cc46</color>
+    <color name="danger_80">#22f54025</color>
+
+    <color name="mcash_grey_80">#113d505a</color>
+    <color name="mcash_grey_50">#663d505a</color>
+    <color name="mcash_grey_20">#223d505a</color>
+
+    <color name="mcash_orange_80">#22f7941e</color>
+    <color name="mcash_orange_30">#ddf7941e</color>
+    <color name="mcash_orange_20">#c67618</color>
+    <color name="mcash_orange_light">#f9a94b</color>
+    <color name="orange_50">#50f7941e</color>
+
+    <color name="dark_bg_70">#12181b</color>
+    <color name="dark_bg_60">#182024</color>
+    <color name="dark_bg_50">#1f282d</color>
+    <color name="dark_bg_20">#2212181b</color>
+    <color name="dark_bg_15">#5512181b</color>
+
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="transparent">#0000ffff</color>
+</resources>

@@ -1,0 +1,188 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/spacing_50"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.mcash.client.presentation.ui.transfer.McashWalletFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_70"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnClose"
+                android:layout_width="@dimen/spacing_50"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:rippleColor="?appRippleColor"
+                android:layout_margin="@dimen/spacing_4"
+                app:contentPadding="@dimen/spacing_5"
+                app:cardElevation="@dimen/spacing_0"
+                app:cardCornerRadius="@dimen/spacing_25">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/civClose"
+                    android:layout_width="@dimen/spacing_20"
+                    android:layout_height="@dimen/spacing_20"
+                    app:srcCompat="@drawable/ic_close"
+                    android:tint="?colorSecondary"
+                    app:tint="?colorSecondary"
+                    android:layout_gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:id="@+id/flClose"-->
+<!--                android:layout_width="@dimen/spacing_50"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:cardElevation="@dimen/spacing_0"-->
+<!--                app:cardCornerRadius="@dimen/spacing_25">-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageView-->
+<!--                    android:id="@+id/civClose"-->
+<!--                    android:layout_width="@dimen/spacing_20"-->
+<!--                    android:layout_height="@dimen/spacing_20"-->
+<!--                    app:srcCompat="@drawable/ic_close"-->
+<!--                    android:tint="?colorSecondary"-->
+<!--                    app:tint="?colorSecondary"-->
+<!--                    android:layout_gravity="center" />-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Transfer"
+                android:textSize="@dimen/font_20"
+                android:textStyle="bold"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_color"
+            app:layout_constraintTop_toBottomOf="@id/clTopBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clProgress"
+            android:layout_width="@dimen/spacing_150"
+            android:layout_height="@dimen/spacing_150"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="@dimen/spacing_100"
+                android:layout_height="@dimen/spacing_100"
+                android:background="@drawable/orange_overlay_circular_bg"
+                android:id="@+id/flCheck"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/spacing_60"
+                    android:layout_height="@dimen/spacing_60"
+                    app:srcCompat="@drawable/logo_dark_bg"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:trackThickness="2dp"
+                android:indeterminateDrawable="@drawable/custom_progress_bar_indeterminate"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:visibility="gone"
+            android:textColor="@color/gray_text"
+            app:layout_constraintTop_toBottomOf="@id/clProgress"
+            tools:text="20s"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvConfirmation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/spacing_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/gray_text"
+            app:layout_constraintTop_toBottomOf="@id/mtvTimer"
+            android:text="@string/awaiting_confirmation"
+            android:textSize="@dimen/font_18" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:textColor="@color/gray_text"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/spacing_16"
+            app:layout_constraintTop_toBottomOf="@id/mtvConfirmation"
+            tools:text="Money successfully transfered to Denis Oluka"
+            android:textSize="@dimen/font_18" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRetry"
+            android:layout_width="0dp"
+            style="@style/PrimaryBtnStyle"
+            android:text="@string/retry"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:layout_marginBottom="@dimen/spacing_30"
+            app:layout_constraintTop_toBottomOf="@+id/mtvMessage"
+            app:layout_constraintStart_toStartOf="@+id/mtvMessage"
+            app:layout_constraintEnd_toEndOf="@+id/mtvMessage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

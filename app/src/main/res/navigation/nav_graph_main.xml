@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_home"
+    android:id="@+id/nav_graph_main">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.mcash.client.presentation.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_promo_detail"
+            app:destination="@id/fragment_promo_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_top"
+            app:destination="@id/fragment_top_up"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_payment_list"
+            app:destination="@id/fragment_payment_list"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_transaction_history"
+            app:destination="@id/fragment_transaction_history"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_nwsc"
+            app:destination="@id/fragment_nwsc"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragment_home_to_umemeFragment"
+            app:destination="@id/umemeFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_airtimeFragment"
+            app:destination="@id/airtimeFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_internetFragment"
+            app:destination="@id/internetFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_TVFragment"
+            app:destination="@id/TVFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_umemeFragment2"
+            app:destination="@id/umemeFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_voiceFragment"
+            app:destination="@id/voiceFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_uraFragment"
+            app:destination="@id/uraFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_merchantFragment"
+            app:destination="@id/merchantFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_loansFragment"
+            app:destination="@id/loansFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_saccoFragment"
+            app:destination="@id/saccoFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_bundlesFragment"
+            app:destination="@id/bundlesFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_transactionSummaryFragment"
+            app:destination="@id/transactionSummaryFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_selectTVFragment"
+            app:destination="@id/selectTVFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_fuelSaveFragment"
+            app:destination="@id/fuelSaveFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_transfer_mcash_wallet"
+        android:name="com.mcash.client.presentation.ui.transfer.McashWalletFragment"
+        android:label="McashWalletFragment" />
+
+    <fragment
+        android:id="@+id/fragment_promo_detail"
+        android:name="com.mcash.client.presentation.ui.home.PromoDetailFragment"
+        android:label="fragment_promo_detail"
+        tools:layout="@layout/fragment_promo_detail" >
+
+<!--        <argument-->
+<!--            android:name="promo"-->
+<!--            app:argType="com.mcash.client.core.models.home.PromoEntity"-->
+<!--            app:nullable="true"-->
+<!--            android:defaultValue="@null" />-->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_top_up"
+        android:name="com.mcash.client.presentation.ui.topup.TopupFragment"
+        android:label="TopupFragment" />
+
+    <fragment
+        android:id="@+id/fragment_payment_list"
+        android:name="com.mcash.client.presentation.ui.home.PaymentsListFragment"
+        android:label="PaymentsListFragment" />
+
+    <fragment
+        android:id="@+id/fragment_transaction_history"
+        android:name="com.mcash.client.presentation.ui.home.TransactionHistoryFragment"
+        android:label="TransactionHistory" />
+
+    <fragment
+        android:id="@+id/fragment_mobile_money"
+        android:name="com.mcash.client.presentation.ui.transfer.MobileMoneyFragment"
+        android:label="MobileMoneyFragment" >
+        <action
+            android:id="@+id/action_fragment_mobile_money_to_transactionSummaryFragment"
+            app:destination="@id/transactionSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_bank_transfer"
+        android:name="com.mcash.client.presentation.ui.transfer.BankTransferFragment"
+        android:label="BankTransferFragment" />
+
+    <fragment
+        android:id="@+id/fragment_nwsc"
+        android:name="com.mcash.client.presentation.ui.utilities.nwsc.NwscFragment"
+        android:label="NwscFragment" />
+
+    <fragment
+        android:id="@+id/umemeFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.umeme.UmemeFragment"
+        android:label="fragment_umeme"
+        tools:layout="@layout/fragment_umeme" >
+        <action
+            android:id="@+id/action_umemeFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/airtimeFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.airtime.AirtimeFragment"
+        android:label="fragment_airtime"
+        tools:layout="@layout/fragment_airtime" >
+        <action
+            android:id="@+id/action_airtimeFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/internetFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.internet.InternetFragment"
+        android:label="fragment_internet"
+        tools:layout="@layout/fragment_internet" >
+        <action
+            android:id="@+id/action_internetFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/TVFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.tv.TVFragment"
+        android:label="fragment_t_v"
+        tools:layout="@layout/fragment_t_v" >
+        <action
+            android:id="@+id/action_TVFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/voiceFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.voice.VoiceFragment"
+        android:label="fragment_voice"
+        tools:layout="@layout/fragment_voice" >
+        <action
+            android:id="@+id/action_voiceFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/uraFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.ura.UraFragment"
+        android:label="fragment_ura"
+        tools:layout="@layout/fragment_ura" >
+        <action
+            android:id="@+id/action_uraFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mcash.client.presentation.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/merchantFragment"
+        android:name="com.mcash.client.presentation.ui.transfer.MerchantFragment"
+        android:label="fragment_merchant"
+        tools:layout="@layout/fragment_merchant" />
+    <fragment
+        android:id="@+id/loansFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.loans.LoansFragment"
+        android:label="fragment_loans"
+        tools:layout="@layout/fragment_loans" >
+        <action
+            android:id="@+id/action_loansFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/saccoFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.sacco.SaccoFragment"
+        android:label="fragment_sacco"
+        tools:layout="@layout/fragment_sacco" >
+        <action
+            android:id="@+id/action_saccoFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/bundlesFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.bundles.BundlesFragment"
+        android:label="fragment_bundles"
+        tools:layout="@layout/fragment_bundles" />
+    <fragment
+        android:id="@+id/transactionSummaryFragment"
+        android:name="com.mcash.client.presentation.ui.transactions.TransactionSummaryFragment"
+        android:label="fragment_transaction_summary"
+        tools:layout="@layout/fragment_transaction_summary" />
+    <fragment
+        android:id="@+id/selectTVFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.tv.SelectTVFragment"
+        android:label="fragment_select_t_v"
+        tools:layout="@layout/fragment_select_t_v" >
+        <action
+            android:id="@+id/action_selectTVFragment_to_confirmTvFragment"
+            app:destination="@id/confirmTvFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmTvFragment"
+        android:name="com.mcash.client.presentation.ui.utilities.tv.ConfirmTvFragment"
+        android:label="fragment_confirm_tv"
+        tools:layout="@layout/fragment_confirm_tv" >
+        <action
+            android:id="@+id/action_confirmTvFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/fuelSaveFragment"
+        android:name="com.mcash.client.presentation.ui.fuelSave.FuelSaveFragment"
+        android:label="fragment_fuel_save"
+        tools:layout="@layout/fragment_fuel_save" >
+        <action
+            android:id="@+id/action_fuelSaveFragment_to_fuelStationDetailsFragment"
+            app:destination="@id/fuelStationDetailsFragment" />
+        <action
+            android:id="@+id/action_fuelSaveFragment_to_scanFuelStationCodeFragment"
+            app:destination="@id/scanFuelStationCodeFragment" />
+        <action
+            android:id="@+id/action_fuelSaveFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+        <action
+            android:id="@+id/action_fuelSaveFragment_to_driverOnboardingFragment"
+            app:destination="@id/driverOnboardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fuelStationDetailsFragment"
+        android:name="com.mcash.client.presentation.ui.fuelSave.FuelStationDetailsFragment"
+        android:label="fragment_fuel_station_details"
+        tools:layout="@layout/fragment_fuel_station_details" >
+        <action
+            android:id="@+id/action_fuelStationDetailsFragment_to_confirmFuelSavePurchaseFragment"
+            app:destination="@id/confirmFuelSavePurchaseFragment" />
+        <action
+            android:id="@+id/action_fuelStationDetailsFragment_to_fuelSaveFragment"
+            app:destination="@id/fuelSaveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanFuelStationCodeFragment"
+        android:name="com.mcash.client.presentation.ui.fuelSave.ScanFuelStationCodeFragment"
+        android:label="fragment_scan_fuel_sation_code"
+        tools:layout="@layout/fragment_scan_fuel_sation_code" >
+        <action
+            android:id="@+id/action_scanFuelStationCodeFragment_to_fuelStationDetailsFragment"
+            app:destination="@id/fuelStationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFuelSavePurchaseFragment"
+        android:name="com.mcash.client.presentation.ui.fuelSave.ConfirmFuelSavePurchaseFragment"
+        android:label="fragment_confirm_fuel_save_purchase"
+        tools:layout="@layout/fragment_confirm_fuel_save_purchase" >
+        <action
+            android:id="@+id/action_confirmFuelSavePurchaseFragment_to_fragment_home"
+            app:destination="@id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/driverOnboardingFragment"
+        android:name="com.mcash.client.presentation.ui.fuelSave.DriverOnboardingFragment"
+        android:label="fragment_driver_onboarding"
+        tools:layout="@layout/fragment_driver_onboarding" >
+        <action
+            android:id="@+id/action_driverOnboardingFragment_to_fuelSaveFragment"
+            app:destination="@id/fuelSaveFragment" />
+        <action
+            android:id="@+id/action_driverOnboardingFragment_to_idScanFragment"
+            app:destination="@id/idScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idScanFragment"
+        android:name="com.mcash.client.presentation.ui.kyc.IdScanFragment"
+        android:label="fragment_id_scan"
+        tools:layout="@layout/fragment_id_scan" >
+
+        <action
+            android:id="@+id/action_idScanFragment_to_driverOnboardingFragment"
+            app:destination="@id/driverOnboardingFragment" />
+    </fragment>
+
+
+</navigation>

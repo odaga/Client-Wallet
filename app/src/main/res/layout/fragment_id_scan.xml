@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.kyc.IdScanFragment">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/scan" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:elevation="@dimen/_10ssp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/form_builder_back_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:padding="10dp"
+            android:text="My Account"
+            android:textAlignment="center"
+            android:textColor="@color/gray_text"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/top_action_bar_scrim"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:id="@+id/close_camera_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="start"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_back"
+            app:tint="@android:color/white" />
+
+
+        <ImageView
+            android:id="@+id/camera_flash_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_flash_off"
+            app:tint="@android:color/white" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_20ssp"
+        android:paddingBottom="@dimen/_20ssp"
+        android:visibility="gone"
+        android:weightSum="10">
+
+
+        <TextView
+            android:id="@+id/barcode_data_field"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_weight="7" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress_circular"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:layout_weight="3"
+            app:lottie_speed="1.5"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animated_progress" />
+
+        <ImageView
+            android:id="@+id/button_try_again"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:src="@drawable/ic_refresh"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:tint="@color/mcash_orange" />
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

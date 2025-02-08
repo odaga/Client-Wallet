@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.mcash.data";
+option java_multiple_files = true;
+
+message UserProto {
+    string id = 1;
+    string username = 2;
+    string phone = 3;
+    string name = 4;
+    string email = 5;
+    string pin = 6;
+    string token = 7;
+    string ip = 8;
+    string sip = 9;
+}
+
+

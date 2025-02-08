@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/spacing_50"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/spacing_200"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/flClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_ripple_bg"
+            android:padding="@dimen/spacing_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/civClose"
+                android:layout_width="@dimen/spacing_16"
+                android:layout_height="@dimen/spacing_16"
+                android:layout_gravity="center"
+                android:tint="?attr/colorSecondary"
+                app:srcCompat="@drawable/ic_close"
+                app:tint="?attr/colorSecondary" />
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_20"
+            android:text="Choose Bundles"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_color" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clActions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_20"
+        android:layout_marginEnd="@dimen/spacing_16">
+
+        <LinearLayout
+            android:id="@+id/llVoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_ripple_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_16"
+            app:layout_constraintEnd_toStartOf="@id/g33"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/civVoiceBundles"
+                android:layout_width="@dimen/spacing_50"
+                android:layout_height="@dimen/spacing_50"
+                android:layout_gravity="center"
+                android:tint="?attr/colorSecondary"
+                app:srcCompat="@drawable/voice_bundles"
+                app:tint="?attr/colorSecondary" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_8"
+                android:text="Voice Bundles"
+                android:textColor="?attr/colorSecondary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_ripple_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_16"
+            app:layout_constraintEnd_toStartOf="@id/g66"
+            app:layout_constraintStart_toEndOf="@+id/g33"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/civDataBundles"
+                android:layout_width="@dimen/spacing_50"
+                android:layout_height="@dimen/spacing_50"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="?attr/colorSecondary"
+                app:srcCompat="@drawable/mobile_data"
+                app:tint="?attr/colorSecondary" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_8"
+                android:text="Data Bundles"
+                android:textColor="?attr/colorSecondary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_ripple_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_16"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/g66"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/civHistory"
+                android:layout_width="@dimen/spacing_30"
+                android:layout_height="@dimen/spacing_30"
+                android:layout_gravity="center"
+                android:tint="?attr/colorSecondary"
+                app:srcCompat="@drawable/ic_bank"
+                app:tint="?attr/colorSecondary" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_8"
+                android:text="@string/bank"
+                android:textColor="?attr/colorSecondary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g33"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g66"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

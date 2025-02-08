@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?bgColor"
+    tools:context=".presentation.ui.utilities.tv.ConfirmTvFragment">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/confirmation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/layout_main_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layoutToolbar"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/flWalletPic"
+                android:layout_width="@dimen/spacing_100"
+                android:layout_height="@dimen/spacing_100"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:translationZ="10dp"
+                app:cardCornerRadius="@dimen/_50ssp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tv_provider_icon"
+                    android:layout_width="@dimen/spacing_50"
+                    android:layout_height="@dimen/spacing_50"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_tv" />
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:id="@+id/cardInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:background="@drawable/rounded_corner"
+                app:cardCornerRadius="@dimen/spacing_8"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:padding="@dimen/spacing_16">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvAccountNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:text="@string/account_name"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvAccountNameValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mcash_grey"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/mtvAccountNameLabel"
+                        tools:text="Denis Oluka" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvAccountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_16"
+                        android:text="@string/decoder_no"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mtvAccountNameLabel" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvDecoderValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mcash_grey"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/mtvAccountLabel"
+                        tools:text="342352" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtAmountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_16"
+                        android:text="@string/amount"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mtvAccountLabel" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvAmountValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mcash_grey"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/mtAmountLabel"
+                        tools:text="UGX 160,000" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvChargeLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_16"
+                        android:text="@string/charges"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mtAmountLabel" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvChargeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mcash_grey"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/mtvChargeLabel"
+                        tools:text="UGX 160,000" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvTotalLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_16"
+                        android:text="@string/total_amount"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mtvChargeLabel" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mtvTotalValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/mcash_grey"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/mtvTotalLabel"
+                        tools:text="UGX 160,000" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_confirm_tv_payment"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:layout_marginBottom="@dimen/_20ssp"
+            android:text="Confirm Payment" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/transaction_summary_view"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_complete_txn"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20ssp"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_20ssp"
+                android:layout_marginBottom="@dimen/_20ssp"
+                android:background="@drawable/rounded_corner"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_10ssp">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_success"
+                    android:translationZ="@dimen/_20ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5ssp"
+                    android:text="Success"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/narration_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You're Payment has been successfully done."
+                    android:textAlignment="center"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/_10ssp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_20ssp"
+                android:background="@drawable/rounded_corner"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="Transaction Details"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/_10ssp"
+                        android:layout_height="@dimen/_10ssp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:rotation="270"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/gray_text" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/amount_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Amount"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="UGX. 5,000"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/status_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="Payment Status"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Success"
+                        android:textColor="@color/success"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="@dimen/_20ssp"
+                    android:layout_marginEnd="@dimen/_20ssp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:layout_marginBottom="@dimen/_15ssp"
+                    android:background="@color/black" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/txn_ref_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Transaction Reference"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/txn_ref"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="MCSH223404"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/charge_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Charge"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/txn_charge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="UGX.200"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/total_amount_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Total Amount"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="UGX.5,200"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/transaction_date_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Date"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/transaction_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="12-10-2024"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp">
+
+                    <TextView
+                        android:id="@+id/transaction_time_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Time"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <TextView
+                        android:id="@+id/transaction_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="12:03 PM"
+                        android:textSize="@dimen/_11ssp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button_complete_txn"
+            style="@style/PrimaryBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginEnd="@dimen/_20ssp"
+            android:layout_marginBottom="@dimen/_20ssp"
+            android:text="Back to Home" />
+
+
+
+    </RelativeLayout>
+</LinearLayout>

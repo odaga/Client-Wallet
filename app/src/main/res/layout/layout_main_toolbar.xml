@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="@dimen/spacing_0"
+    app:cardElevation="2dp"
+    android:backgroundTint="?toolbarColor"
+    android:layout_height="?actionBarSize"
+    android:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/spacing_50"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:rippleColor="?appRippleColor"
+                android:layout_margin="@dimen/spacing_4"
+                app:contentPadding="@dimen/spacing_5"
+                app:cardElevation="@dimen/spacing_0"
+                app:cardCornerRadius="@dimen/spacing_25">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/civBack"
+                    android:layout_width="@dimen/spacing_20"
+                    android:layout_height="@dimen/spacing_20"
+                    app:srcCompat="@drawable/ic_arrow_back"
+                    android:tint="?colorSecondary"
+                    app:tint="?colorSecondary"
+                    android:layout_gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mtvTitle"
+                android:layout_width="@dimen/spacing_0"
+                android:layout_height="wrap_content"
+                tools:text="Mcash"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/spacing_30"
+                android:textSize="@dimen/font_18"
+                android:singleLine="true"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_marginEnd="@dimen/spacing_16"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/btnBack"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
